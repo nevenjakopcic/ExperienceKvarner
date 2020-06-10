@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import hr.tvz.android.experiencekvarner.ServiceGenerator;
+import hr.tvz.android.experiencekvarner.Utils;
 import hr.tvz.android.experiencekvarner.model.CityModel;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -13,10 +14,9 @@ import retrofit2.Response;
 
 public class HomeInteractorImpl implements IHomeMVP.Interactor {
 
-    private static final String baseUrl = "http://10.0.2.2:8080/api/";
-    ICityService client = ServiceGenerator.createService(ICityService.class, baseUrl);
+    ICityService client = ServiceGenerator.createService(ICityService.class, Utils.baseUrl);
 
-    List<CityModel> cities = new ArrayList<>();
+    private List<CityModel> cities = new ArrayList<>();
 
     @Override
     public void findCities(IHomeMVP.Interactor.OnFinishedListener listener) {

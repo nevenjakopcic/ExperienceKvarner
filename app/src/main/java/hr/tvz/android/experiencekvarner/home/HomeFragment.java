@@ -30,9 +30,8 @@ public class HomeFragment extends Fragment implements IHomeMVP.View {
         presenter = new HomePresenterImpl(this);
         ButterKnife.bind(this, view);
 
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this.getActivity());
         recyclerView.setAdapter(new HomeRecyclerAdapter(presenter));
-        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         return view;
     }

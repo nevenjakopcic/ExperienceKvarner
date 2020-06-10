@@ -31,7 +31,7 @@ public class HomePresenterImpl implements IHomeMVP.Presenter, IHomeMVP.Interacto
     @Override
     public void onBindRepositoryRowViewAtPosition(int position, HomeViewHolder holder) {
         CityModel city = interactor.getCity(position);
-        holder.setTitle(city.getName());
+        holder.setName(city.getName());
     }
 
     @Override
@@ -42,6 +42,7 @@ public class HomePresenterImpl implements IHomeMVP.Presenter, IHomeMVP.Interacto
     @Override
     public void onDestroy() {
         interactor.onDestroy();
+        interactor = null;
         view = null;
     }
 }
