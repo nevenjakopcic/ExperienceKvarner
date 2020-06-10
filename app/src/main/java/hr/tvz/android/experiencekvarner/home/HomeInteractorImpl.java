@@ -1,28 +1,42 @@
 package hr.tvz.android.experiencekvarner.home;
 
+import androidx.annotation.NonNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
+import hr.tvz.android.experiencekvarner.ServiceGenerator;
 import hr.tvz.android.experiencekvarner.model.CityModel;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class HomeInteractorImpl implements IHomeMVP.Interactor {
 
-    List<CityModel> cities;
+    private static final String baseUrl = "http://10.0.2.2:8080/api/";
+    ICityService client = ServiceGenerator.createService(ICityService.class, baseUrl);
+
+    List<CityModel> cities = new ArrayList<>();
 
     @Override
     public void findCities(IHomeMVP.Interactor.OnFinishedListener listener) {
-        cities = getDummyCities();
-        listener.onFinished();
-    }
+        client.getAllCities().enqueue(new Callback<List<CityModel>>() {
+            @Override
+            public void onResponse(@NonNull Call<List<CityModel>> call,
+                                   @NonNull Response<List<CityModel>> response) {
+                if (response.isSuccessful()) {
+                    cities = response.body();
+                    listener.onFinished();
+                } else
+                    System.err.println(response.errorBody());
+            }
 
-    private List<CityModel> getDummyCities() {
-        List<CityModel> dummyList = new ArrayList<>();
-        dummyList.add(new CityModel(1L, "Rijeka"));
-        dummyList.add(new CityModel(2L, "Senj"));
-        dummyList.add(new CityModel(3L, "Krk"));
-        dummyList.add(new CityModel(4L, "Rab"));
-
-        return dummyList;
+            @Override
+            public void onFailure(@NonNull Call<List<CityModel>> call,
+                                  @NonNull Throwable t) {
+                t.printStackTrace(System.err);
+            }
+        });
     }
 
     @Override
