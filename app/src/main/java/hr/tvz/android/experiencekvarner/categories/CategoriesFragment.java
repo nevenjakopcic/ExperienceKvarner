@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -51,6 +52,8 @@ public class CategoriesFragment extends Fragment implements ICategoriesMVP.View 
     public void viewActivitiesOfCityAndCategory(CityModel city, CategoryModel category) {
         System.out.println(city);
         System.out.println(category);
+        CategoriesFragmentDirections.ActionCategoriesFragmentToActivitiesFragment action = CategoriesFragmentDirections.actionCategoriesFragmentToActivitiesFragment(city, category);
+        Navigation.findNavController(requireView()).navigate(action);
     }
 
     @Override

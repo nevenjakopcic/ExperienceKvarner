@@ -34,5 +34,20 @@
 		<argument
 				android:name="city"
 				app:argType="hr.tvz.android.experiencekvarner.model.CityModel" />
+		<action
+				android:id="@+id/action_categoriesFragment_to_activitiesFragment"
+				app:destination="@id/activitiesFragment" />
+	</fragment>
+	<fragment
+			android:id="@+id/activitiesFragment"
+			android:name="hr.tvz.android.experiencekvarner.activities.ActivitiesFragment"
+			android:label="fragment_activities"
+			tools:layout="@layout/fragment_activities" >
+		<argument
+				android:name="city"
+				app:argType="hr.tvz.android.experiencekvarner.model.CityModel" />
+		<argument
+				android:name="category"
+				app:argType="hr.tvz.android.experiencekvarner.model.CategoryModel" />
 	</fragment>
 </navigation>
