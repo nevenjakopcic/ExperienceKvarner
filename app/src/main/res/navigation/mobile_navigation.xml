@@ -9,7 +9,11 @@
 			android:id="@+id/nav_home"
 			android:name="hr.tvz.android.experiencekvarner.home.HomeFragment"
 			android:label="@string/menu_home"
-			tools:layout="@layout/fragment_home" />
+			tools:layout="@layout/fragment_home" >
+		<action
+				android:id="@+id/action_nav_home_to_categoriesFragment"
+				app:destination="@id/categoriesFragment" />
+	</fragment>
 
 	<fragment
 			android:id="@+id/nav_gallery"
@@ -22,4 +26,13 @@
 			android:name="hr.tvz.android.experiencekvarner.slideshow.SlideshowFragment"
 			android:label="@string/menu_slideshow"
 			tools:layout="@layout/fragment_slideshow" />
+	<fragment
+			android:id="@+id/categoriesFragment"
+			android:name="hr.tvz.android.experiencekvarner.categories.CategoriesFragment"
+			android:label="fragment_categories"
+			tools:layout="@layout/fragment_categories" >
+		<argument
+				android:name="city"
+				app:argType="hr.tvz.android.experiencekvarner.model.CityModel" />
+	</fragment>
 </navigation>

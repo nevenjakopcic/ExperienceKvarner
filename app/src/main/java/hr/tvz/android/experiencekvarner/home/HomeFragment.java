@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -45,6 +46,8 @@ public class HomeFragment extends Fragment implements IHomeMVP.View {
     @Override
     public void viewCitysActivityCategories(CityModel city) {
         System.out.println(city);
+        HomeFragmentDirections.ActionNavHomeToCategoriesFragment action = HomeFragmentDirections.actionNavHomeToCategoriesFragment(city);
+        Navigation.findNavController(requireView()).navigate(action);
     }
 
     @Override
@@ -55,9 +58,9 @@ public class HomeFragment extends Fragment implements IHomeMVP.View {
     }
 
     @Override
-    public void onDestroyView() {
+    public void onDestroy() {
         presenter.onDestroy();
         presenter = null;
-        super.onDestroyView();
+        super.onDestroy();
     }
 }
