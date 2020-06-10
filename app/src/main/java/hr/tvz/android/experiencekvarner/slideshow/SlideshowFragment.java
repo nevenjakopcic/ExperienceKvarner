@@ -1,4 +1,4 @@
-package hr.tvz.android.experiencekvarner.ui.slideshow;
+package hr.tvz.android.experiencekvarner.slideshow;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
