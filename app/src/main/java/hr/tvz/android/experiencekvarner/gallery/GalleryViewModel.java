@@ -1,4 +1,4 @@
-package hr.tvz.android.experiencekvarner.ui.gallery;
+package hr.tvz.android.experiencekvarner.gallery;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

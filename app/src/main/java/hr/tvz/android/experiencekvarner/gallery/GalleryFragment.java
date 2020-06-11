@@ -1,4 +1,4 @@
-package hr.tvz.android.experiencekvarner.ui.gallery;
+package hr.tvz.android.experiencekvarner.gallery;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
