@@ -9,4 +9,5 @@ public class ActivityModel {
     private final String name;
     private final String description;
     private final Float score;
+    private final String image;
 }

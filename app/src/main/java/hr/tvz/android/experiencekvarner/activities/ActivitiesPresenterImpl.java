@@ -35,6 +35,7 @@ public class ActivitiesPresenterImpl implements IActivitiesMVP.Presenter, IActiv
     public void onBindRepositoryRowViewAtPosition(int position, ActivitiesViewHolder holder) {
         ActivityModel activity = interactor.getActivity(position);
         holder.setName(activity.getName());
+        holder.setImage(interactor.getCategory(), activity.getImage());
     }
 
     @Override
