@@ -25,7 +25,7 @@ public class CategoriesInteractorImpl implements ICategoriesMVP.Interactor {
     }
 
     @Override
-    public void findCategories(ICategoriesMVP.Interactor.OnFinishedListener listener) {
+    public void findCategories(OnFinishedListener listener) {
         client.getActivityCategoriesOfCity(city.getId()).enqueue(new Callback<List<CategoryModel>>() {
             @Override
             public void onResponse(@NonNull Call<List<CategoryModel>> call,

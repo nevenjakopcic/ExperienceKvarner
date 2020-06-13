@@ -53,4 +53,7 @@ dependencies {
 
 	// SafeArgs
 	apply plugin: "androidx.navigation.safeargs"
+
+	// Fresco
+	implementation 'com.facebook.fresco:fresco:2.2.0'
 }
