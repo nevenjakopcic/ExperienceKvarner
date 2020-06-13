@@ -32,6 +32,7 @@ public class HomePresenterImpl implements IHomeMVP.Presenter, IHomeMVP.Interacto
     public void onBindRepositoryRowViewAtPosition(int position, HomeViewHolder holder) {
         CityModel city = interactor.getCity(position);
         holder.setName(city.getName());
+        holder.setImage(city.getImage());
     }
 
     @Override
