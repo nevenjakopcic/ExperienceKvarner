@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -47,6 +48,8 @@ public class ActivitiesFragment extends Fragment implements IActivitiesMVP.View 
     @Override
     public void viewActivityDetails(ActivityModel activity) {
         System.out.println(activity);
+        ActivitiesFragmentDirections.ActionActivitiesFragmentToDetailsFragment action = ActivitiesFragmentDirections.actionActivitiesFragmentToDetailsFragment(activity);
+        Navigation.findNavController(requireView()).navigate(action);
     }
 
     @Override

@@ -34,15 +34,7 @@ public class ActivitiesViewHolder extends RecyclerView.ViewHolder implements IAc
 
     @Override
     public void setImage(CategoryModel category, String image) {
-        String categorySubdomain;
-        switch (category.getName()) {
-            case "beach": categorySubdomain = "beaches/"; break;
-            case "event": categorySubdomain = "events/"; break;
-            case "boat": categorySubdomain = "boats/"; break;
-            case "apartment": categorySubdomain = "apartments/"; break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + category.getName());
-        }
-        thumbnail.setImageURI(Uri.parse(String.format("%s%s%s%s", Utils.baseUrl, "activities/", categorySubdomain, image)));
+
+        thumbnail.setImageURI(Uri.parse(String.format("%s%s%s", Utils.baseUrl, "activities/", image)));
     }
 }

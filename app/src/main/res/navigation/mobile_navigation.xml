@@ -49,5 +49,16 @@
 		<argument
 				android:name="category"
 				app:argType="hr.tvz.android.experiencekvarner.model.CategoryModel" />
+		<action
+				android:id="@+id/action_activitiesFragment_to_detailsFragment"
+				app:destination="@id/detailsFragment" />
+	</fragment>
+	<fragment
+			android:id="@+id/detailsFragment"
+			android:name="hr.tvz.android.experiencekvarner.details.DetailsFragment"
+			android:label="DetailsFragment" >
+		<argument
+				android:name="activity"
+				app:argType="hr.tvz.android.experiencekvarner.model.ActivityModel" />
 	</fragment>
 </navigation>
