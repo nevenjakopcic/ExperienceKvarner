@@ -10,8 +10,9 @@ import lombok.Data;
 @Data
 public class CategoryModel implements Parcelable {
 
-    @SerializedName("id")   private final Long id;
-    @SerializedName("name") private final String name;
+    @SerializedName("id")       private final Long id;
+    @SerializedName("name")     private final String name;
+    @SerializedName("image")    private final String image;
 
     protected CategoryModel(Parcel in) {
         if (in.readByte() == 0) {
@@ -20,6 +21,7 @@ public class CategoryModel implements Parcelable {
             id = in.readLong();
         }
         name = in.readString();
+        image = in.readString();
     }
 
     public static final Creator<CategoryModel> CREATOR = new Creator<CategoryModel>() {
@@ -48,5 +50,6 @@ public class CategoryModel implements Parcelable {
             dest.writeLong(id);
         }
         dest.writeString(name);
+        dest.writeString(image);
     }
 }

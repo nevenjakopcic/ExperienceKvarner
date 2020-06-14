@@ -28,7 +28,7 @@ public class HomeViewHolder extends RecyclerView.ViewHolder implements ICityRowV
 
     @Override
     public void setName(String name) {
-        nameTextView.setText(name);
+        nameTextView.setText(name.toUpperCase());
     }
 
     @Override

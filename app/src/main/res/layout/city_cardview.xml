@@ -9,17 +9,23 @@
 			android:layout_width="match_parent"
 			android:layout_height="match_parent">
 
-		<com.google.android.material.textview.MaterialTextView
-			android:id="@+id/name_text"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content" />
-
 		<com.facebook.drawee.view.SimpleDraweeView
 			android:id="@+id/city_thumbnail"
 			android:layout_width="match_parent"
-			android:layout_height="280dp"
-			fresco:actualImageScaleType="fitCenter"
-			fresco:placeholderImage="@android:drawable/gallery_thumb" />
+			android:layout_height="200dp"
+			fresco:actualImageScaleType="centerCrop"
+			fresco:placeholderImage="@android:drawable/gallery_thumb"
+			android:alpha=".75"/>
+
+		<com.google.android.material.textview.MaterialTextView
+			android:id="@+id/name_text"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/test"
+			android:textSize="50sp"
+			android:textStyle="bold"
+			android:textColor="@color/cardview_dark_background"
+			android:layout_centerInParent="true" />
 	</RelativeLayout>
 	
 </com.google.android.material.card.MaterialCardView>
