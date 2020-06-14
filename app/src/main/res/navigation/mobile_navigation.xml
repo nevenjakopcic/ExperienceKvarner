@@ -18,13 +18,13 @@
 	<fragment
 			android:id="@+id/nav_gallery"
 			android:name="hr.tvz.android.experiencekvarner.gallery.GalleryFragment"
-			android:label="@string/menu_gallery"
+			android:label="@string/menu_about"
 			tools:layout="@layout/fragment_gallery" />
 
 	<fragment
 			android:id="@+id/nav_slideshow"
 			android:name="hr.tvz.android.experiencekvarner.slideshow.SlideshowFragment"
-			android:label="@string/menu_slideshow"
+			android:label="@string/menu_contact"
 			tools:layout="@layout/fragment_slideshow" />
 	<fragment
 			android:id="@+id/categoriesFragment"
@@ -41,7 +41,7 @@
 	<fragment
 			android:id="@+id/activitiesFragment"
 			android:name="hr.tvz.android.experiencekvarner.activities.ActivitiesFragment"
-			android:label="fragment_activities"
+			android:label="@string/activities"
 			tools:layout="@layout/fragment_activities" >
 		<argument
 				android:name="city"
@@ -56,7 +56,7 @@
 	<fragment
 			android:id="@+id/detailsFragment"
 			android:name="hr.tvz.android.experiencekvarner.details.DetailsFragment"
-			android:label="DetailsFragment" >
+			android:label="@string/activity" >
 		<argument
 				android:name="activity"
 				app:argType="hr.tvz.android.experiencekvarner.model.ActivityModel" />
