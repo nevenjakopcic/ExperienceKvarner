@@ -7,31 +7,28 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import hr.tvz.android.experiencekvarner.R;
 
 public class AboutFragment extends Fragment {
 
-    private hr.tvz.android.experiencekvarner.about.AboutViewModel aboutViewModel;
+    @BindView(R.id.title1)
+    TextView title;
+
+    @BindView(R.id.opis)
+    TextView opis;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        aboutViewModel =
-                ViewModelProviders.of(this).get(hr.tvz.android.experiencekvarner.about.AboutViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_about, container, false);
-        final TextView textView = root.findViewById(R.id.title1);
-        final TextView opis = root.findViewById(R.id.opis);
-        aboutViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(getString(R.string.wiki1));
-                opis.setText(getString(R.string.wiki2));
-            }
-        });
-        return root;
+        View view = inflater.inflate(R.layout.fragment_about, container, false);
+        ButterKnife.bind(this, view);
+
+        title.setText(R.string.wiki1);
+        opis.setText(R.string.wiki2);
+
+        return view;
     }
 }
