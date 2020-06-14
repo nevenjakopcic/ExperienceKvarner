@@ -33,6 +33,7 @@ public class CategoriesPresenterImpl implements ICategoriesMVP.Presenter, ICateg
     public void onBindRepositoryRowViewAtPosition(int position, CategoriesViewHolder holder) {
         CategoryModel category = interactor.getCategory(position);
         holder.setName(category.getName());
+        holder.setImage(category.getImage());
     }
 
     @Override

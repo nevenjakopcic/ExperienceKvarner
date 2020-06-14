@@ -13,7 +13,7 @@
 			android:id="@+id/city_thumbnail"
 			android:layout_width="match_parent"
 			android:layout_height="200dp"
-			fresco:actualImageScaleType="fitCenter"
+			fresco:actualImageScaleType="centerCrop"
 			fresco:placeholderImage="@android:drawable/gallery_thumb"
 			android:alpha=".75"/>
 
@@ -23,6 +23,7 @@
 			android:layout_height="wrap_content"
 			android:text="@string/test"
 			android:textSize="50sp"
+			android:textStyle="bold"
 			android:textColor="@color/cardview_dark_background"
 			android:layout_centerInParent="true" />
 	</RelativeLayout>

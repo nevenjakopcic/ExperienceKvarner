@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -30,11 +31,13 @@ public class ActivitiesFragment extends Fragment implements IActivitiesMVP.View 
         View view =  inflater.inflate(R.layout.fragment_activities, container, false);
         CityModel city = ActivitiesFragmentArgs.fromBundle(requireArguments()).getCity();
         CategoryModel category = ActivitiesFragmentArgs.fromBundle(requireArguments()).getCategory();
+        ((Toolbar) requireActivity().requireViewById(R.id.toolbar)).setTitle(category.getName());
         presenter = new ActivitiesPresenterImpl(this, city, category);
         ButterKnife.bind(this, view);
 
         recyclerView.setAdapter(new ActivitiesRecyclerAdapter(presenter));
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
 
         return view;
     }

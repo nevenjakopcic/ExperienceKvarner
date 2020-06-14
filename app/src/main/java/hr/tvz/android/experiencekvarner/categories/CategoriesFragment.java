@@ -5,12 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.android.material.textview.MaterialTextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -23,7 +22,6 @@ public class CategoriesFragment extends Fragment implements ICategoriesMVP.View 
 
     private ICategoriesMVP.Presenter presenter;
 
-    @BindView(R.id.city_text) MaterialTextView cityTextView;
     @BindView(R.id.recycler_view) RecyclerView recyclerView;
 
     @Override
@@ -31,13 +29,13 @@ public class CategoriesFragment extends Fragment implements ICategoriesMVP.View 
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_categories, container, false);
         CityModel city = CategoriesFragmentArgs.fromBundle(requireArguments()).getCity();
+        ((Toolbar) requireActivity().requireViewById(R.id.toolbar)).setTitle(city.getName());
         presenter = new CategoriesPresenterImpl(this, city);
         ButterKnife.bind(this, view);
 
         recyclerView.setAdapter(new CategoriesRecyclerAdapter(presenter));
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
 
-        cityTextView.setText(city.getName());
 
         return view;
     }

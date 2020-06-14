@@ -13,7 +13,7 @@
 
 
 		<com.facebook.drawee.view.SimpleDraweeView
-			android:id="@+id/city_thumbnail"
+			android:id="@+id/category_thumbnail"
 			android:layout_width="match_parent"
 			android:layout_height="100dp"
 			fresco:actualImageScaleType="fitCenter"
