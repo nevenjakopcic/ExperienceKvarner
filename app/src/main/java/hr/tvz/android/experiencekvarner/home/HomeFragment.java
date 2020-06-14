@@ -58,7 +58,9 @@ public class HomeFragment extends Fragment implements IHomeMVP.View {
 
     @Override
     public void onDestroy() {
-        presenter.onDestroy();
+        if (presenter != null) {
+            presenter.onDestroy();
+        }
         presenter = null;
         super.onDestroy();
     }

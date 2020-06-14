@@ -64,7 +64,9 @@ public class ActivitiesFragment extends Fragment implements IActivitiesMVP.View 
 
     @Override
     public void onDestroy() {
-        presenter.onDestroy();
+        if (presenter != null) {
+            presenter.onDestroy();
+        }
         presenter = null;
         super.onDestroy();
     }

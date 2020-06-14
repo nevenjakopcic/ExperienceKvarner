@@ -63,7 +63,9 @@ public class CategoriesFragment extends Fragment implements ICategoriesMVP.View 
 
     @Override
     public void onDestroy() {
-        presenter.onDestroy();
+        if (presenter != null) {
+            presenter.onDestroy();
+        }
         presenter = null;
         super.onDestroy();
     }
