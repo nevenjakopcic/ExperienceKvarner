@@ -16,16 +16,16 @@
 	</fragment>
 
 	<fragment
-			android:id="@+id/nav_gallery"
-			android:name="hr.tvz.android.experiencekvarner.gallery.GalleryFragment"
+			android:id="@+id/nav_about"
+			android:name="hr.tvz.android.experiencekvarner.about.AboutFragment"
 			android:label="@string/menu_about"
-			tools:layout="@layout/fragment_gallery" />
+			tools:layout="@layout/fragment_about" />
 
 	<fragment
-			android:id="@+id/nav_slideshow"
-			android:name="hr.tvz.android.experiencekvarner.slideshow.SlideshowFragment"
+			android:id="@+id/nav_contact"
+			android:name="hr.tvz.android.experiencekvarner.contact.ContactFragment"
 			android:label="@string/menu_contact"
-			tools:layout="@layout/fragment_slideshow" />
+			tools:layout="@layout/fragment_contact" />
 	<fragment
 			android:id="@+id/categoriesFragment"
 			android:name="hr.tvz.android.experiencekvarner.categories.CategoriesFragment"

@@ -14,6 +14,7 @@
 		android:layout_centerHorizontal="true"
 		android:layout_marginTop="10dp"
 		android:text="@string/Naslov"
+		android:layout_margin="10dp"
 		android:textSize="30sp"/>
 
 	<com.google.android.material.textview.MaterialTextView
@@ -24,7 +25,8 @@
 		android:layout_below="@+id/text_name"
 		android:layout_marginTop="20dp"
 		android:text="@string/opis"
-		android:textSize="15sp"/>
+		android:textSize="15sp"
+		android:layout_margin="20dp"/>
 
 	<com.facebook.drawee.view.SimpleDraweeView
 		android:id="@+id/image"
